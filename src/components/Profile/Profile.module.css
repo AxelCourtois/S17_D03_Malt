@@ -8,3 +8,52 @@
 	justify-content: center;
 	color: #2b3743;
 }
+
+.formulaire {
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	margin: 0 auto;
+}
+
+.formulaire .nameGroup {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.nameGroup div {
+	flex: 1;
+	margin-right: 50px;
+}
+
+.nameGroup div:last-child {
+	margin-right: 0;
+}
+
+.formulaire input {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #afb8c1;
+	width: 100%;
+}
+
+.formulaire .compGroup {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.formulaire .buttonGroup {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+label {
+	font-weight: 500;
+	padding-left: 12px;
+	display: block;
+}

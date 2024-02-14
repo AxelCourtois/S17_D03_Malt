@@ -18,8 +18,8 @@ const Header = () => (
 			</ul>
 		</nav>
 		<div className={styles.info}>
-			<p className={styles.name}>Nom et prénom</p>
-			<p className={styles.comp}>Compétences</p>
+			<p className={styles.name}>Inconnu</p>
+			<p className={styles.comp}>Aucune compétence</p>
 		</div>
 	</div>
 );
