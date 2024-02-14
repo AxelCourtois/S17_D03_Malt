@@ -1,0 +1,33 @@
+.header {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.header h1 {
+	font-size: 2.5em;
+	margin-top: 0px;
+	display: flex;
+	justify-content: center;
+	color: #2b3743;
+}
+
+.header p {
+	font-size: 1.5em;
+	margin-top: 0px;
+	display: flex;
+	justify-content: center;
+	color: #2b3743;
+}
+
+.header a {
+	font-weight: 500;
+	color: #0fbcf9;
+	text-decoration: inherit;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.header a:hover {
+	color: #0590c2;
+}

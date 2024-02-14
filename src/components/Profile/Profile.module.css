@@ -1,0 +1,10 @@
+.profile {
+	margin-top: 50px;
+}
+.profile h1 {
+	font-size: 2.5em;
+	margin-top: 0px;
+	display: flex;
+	justify-content: center;
+	color: #2b3743;
+}
