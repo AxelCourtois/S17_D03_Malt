@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setName } from "./action.js";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
+	const dispatch = useDispatch();
+
 	const [formState, setFormState] = useState({
 		prenom: "",
 		nom: "",
@@ -27,7 +31,10 @@ const Profile = () => {
 				.split(",")
 				.map((skill) => capitalizeFirstLetter(skill.trim())),
 		};
-		console.log(result);
+
+		dispatch(
+			setName({ firstName: result.firstName, lastName: result.lastName })
+		);
 	};
 
 	return (
