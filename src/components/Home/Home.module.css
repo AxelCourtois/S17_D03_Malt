@@ -1,10 +1,10 @@
-.header {
+.content {
 	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 }
 
-.header h1 {
+.content h1 {
 	font-size: 2.5em;
 	margin-top: 0px;
 	display: flex;
@@ -12,7 +12,41 @@
 	color: #2b3743;
 }
 
-.header p {
+.content h2 {
+	font-size: 2em;
+	margin-bottom: 20px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	color: #2b3743;
+}
+
+.content ul {
+	padding-left: 0px;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.content li {
+	font-size: 1.2em;
+	color: #2b3743;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	padding-left: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: flex-start;
+	width: 400px;
+	color: #2b3743;
+	border: 1px solid #afb8c1;
+	border-radius: 50px;
+	box-sizing: border-box;
+}
+
+.content p {
 	font-size: 1.5em;
 	margin-top: 0px;
 	display: flex;
@@ -20,7 +54,14 @@
 	color: #2b3743;
 }
 
-.header a {
+.profile {
+	font-size: 1.2em;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.content a {
 	font-weight: 500;
 	color: #0fbcf9;
 	text-decoration: inherit;
@@ -28,6 +69,6 @@
 	margin-right: 7px;
 }
 
-.header a:hover {
+.content a:hover {
 	color: #0590c2;
 }

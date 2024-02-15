@@ -1,16 +1,27 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Profile.module.css";
 import { setName } from "./store/user.action.js";
+import { setCompetence } from "./store/user.action.js";
 
 const Profile = () => {
 	const dispatch = useDispatch();
+	const user = useSelector((state) => state.user);
+	const skills = useSelector((state) => state.skills);
 
 	const [formState, setFormState] = useState({
-		prenom: "",
-		nom: "",
-		competence: "",
+		prenom: user.firstName || "",
+		nom: user.lastName || "",
+		competence: skills.join(", ") || "",
 	});
+
+	useEffect(() => {
+		setFormState({
+			prenom: user.firstName || "",
+			nom: user.lastName || "",
+			competence: skills.join(", ") || "",
+		});
+	}, [user, skills]);
 
 	const handleInputChange = (event) => {
 		setFormState({
@@ -24,17 +35,20 @@ const Profile = () => {
 		const capitalizeFirstLetter = (string) => {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		};
+		let skills = formState.competence
+			.split(",")
+			.map((skill) => capitalizeFirstLetter(skill.trim()));
+		skills = skills.filter((skill) => skill !== "");
 		const result = {
 			firstName: formState.prenom,
 			lastName: formState.nom,
-			skills: formState.competence
-				.split(",")
-				.map((skill) => capitalizeFirstLetter(skill.trim())),
+			skills: skills,
 		};
 
 		dispatch(
 			setName({ firstName: result.firstName, lastName: result.lastName })
 		);
+		dispatch(setCompetence(result.skills));
 	};
 
 	return (
@@ -49,6 +63,7 @@ const Profile = () => {
 							type="text"
 							id="prenom"
 							name="prenom"
+							value={formState.prenom}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -58,6 +73,7 @@ const Profile = () => {
 							type="text"
 							id="nom"
 							name="nom"
+							value={formState.nom}
 							onChange={handleInputChange}
 						/>
 					</div>
@@ -69,6 +85,7 @@ const Profile = () => {
 						type="text"
 						id="competence"
 						name="competence"
+						value={formState.competence}
 						placeholder="Vos compétences, séparées par des virgules"
 						onChange={handleInputChange}
 					/>

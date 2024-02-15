@@ -1,12 +1,21 @@
 import { combineReducers, createStore } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import userReducer from "../components/Profile/store/user.reducer";
-// import skillsReducer from "../components/Profile/skillsReducer";
+import skillsReducer from "../components/Profile/store/skills.reducer";
 
 const rootReducer = combineReducers({
 	user: userReducer,
-	// skills: skillsReducer,
+	skills: skillsReducer,
 });
 
-const store = createStore(rootReducer);
+const persistConfig = {
+	key: "root",
+	storage,
+	whitelist: ["user", "skills"],
+};
 
-export default store;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(persistedReducer);
+export const persistor = persistStore(store);

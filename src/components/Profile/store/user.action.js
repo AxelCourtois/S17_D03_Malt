@@ -1,4 +1,5 @@
 export const SET_NAME = "SET_NAME";
+export const SET_COMPETENCE = "SET_COMPETENCE";
 
 export function setName({ firstName, lastName }) {
 	let payload = {
@@ -13,7 +14,7 @@ export function setName({ firstName, lastName }) {
 
 export function setCompetence(skills) {
 	return {
-		type: "SET_COMPETENCE",
+		type: SET_COMPETENCE,
 		payload: skills,
 	};
 }

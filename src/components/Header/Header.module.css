@@ -21,6 +21,11 @@
 	gap: 3em;
 }
 
+.activeLink {
+	font-weight: 500;
+	color: #0fbcf9;
+}
+
 .link a {
 	font-weight: 500;
 	color: #d2dae2;
