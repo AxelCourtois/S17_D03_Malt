@@ -1,4 +1,4 @@
-import { SET_NAME } from "./action";
+import { SET_NAME } from "./user.action";
 
 const initialState = {
 	firstName: null,

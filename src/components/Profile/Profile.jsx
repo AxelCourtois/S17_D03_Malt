@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setName } from "./action.js";
 import styles from "./Profile.module.css";
+import { setName } from "./store/user.action.js";
 
 const Profile = () => {
 	const dispatch = useDispatch();

@@ -10,3 +10,10 @@ export function setName({ firstName, lastName }) {
 		payload,
 	};
 }
+
+export function setCompetence(skills) {
+	return {
+		type: "SET_COMPETENCE",
+		payload: skills,
+	};
+}
